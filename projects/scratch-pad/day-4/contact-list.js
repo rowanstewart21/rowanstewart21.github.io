@@ -53,11 +53,18 @@ function makeContactList() {
         // we implemented the length api for you //
         length: function() {
             return contacts.length;
+        }, 
+        addContact: function(contact) {
+            contacts.push(contact);
         }
+        
     }
 }
 
 
+//contacts.addContact([11, "rowan", "stewart"]);
+var newContact = makeContact(11, "rowan", "stewart");
+console.log(newContact);
 
 
 // YOUR CODE GOES ABOVE HERE //
