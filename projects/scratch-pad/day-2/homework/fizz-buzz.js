@@ -13,28 +13,20 @@
 function fizzBuzz() {
     // YOUR CODE GOES BELOW HERE //
 
-    var result = [];
-    
-    for (var i = 1; i <= 100; i++) {
+    for (var i = 1; i < 101; i++) {
         if (i % 5 === 0 && i % 3 === 0) {
-            result.push("FizzBuzz");
-        } else if (i % 5 === 0) {
-            result.push("Buzz");
+            console.log("FizzBuzz");
         } else if (i % 3 === 0) {
-            result.push("Fizz");
+            console.log("Fizz");
+        } else if (i % 5 === 0) {
+            console.log("Buzz");
         } else {
-            result.push(i);
+            console.log(i);
         }
     }
     
-    return result;
-
     // YOUR CODE GOES ABOVE HERE //
 }
-
-
-
-
 
 // DON'T REMOVE THIS CODE //////////////////////////////////////////////////////
 if((typeof process !== 'undefined') &&

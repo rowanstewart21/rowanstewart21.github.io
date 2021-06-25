@@ -14,11 +14,18 @@
 function createGreaterThanFilter(base) {
     // YOUR CODE BELOW HERE //
     
-    
-    
+    return function(valueToTest) {
+        if (valueToTest > base) {
+            return true;
+        } else {
+            return false;
+        }
+    }
     
     // YOUR CODE ABOVE HERE //
 }
+
+console.log(createGreaterThanFilter("also")("bee"));
 
 /** 
  * Given an input base to test against, which could be a String or Number, 
@@ -28,8 +35,13 @@ function createGreaterThanFilter(base) {
 function createLessThanFilter(base) {
     // YOUR CODE BELOW HERE //
     
-    
-    
+    return function(valueToTest) {
+        if (valueToTest < base) {
+            return true;
+        } else {
+            return false;
+        }
+    }
     
     // YOUR CODE ABOVE HERE //
 }
@@ -42,8 +54,13 @@ function createLessThanFilter(base) {
 function createStartsWithFilter(startsWith) {
     // YOUR CODE BELOW HERE //
     
-    
-    
+    return function(valueToTest) {
+        if (valueToTest.charAt(0).toLowerCase() == startsWith.toLowerCase()) {
+            return true;
+        } else {
+            return false;
+        }
+    }
     
     // YOUR CODE ABOVE HERE //
 }
@@ -56,8 +73,13 @@ function createStartsWithFilter(startsWith) {
 function createEndsWithFilter(endsWith) {
     // YOUR CODE BELOW HERE //
     
-    
-    
+    return function(valueToTest) {
+        if (valueToTest.charAt(valueToTest.length - 1).toLowerCase() == endsWith.toLowerCase()) {
+            return true;
+        } else {
+            return false;
+        }
+    }
     
     // YOUR CODE ABOVE HERE //
 }
@@ -72,8 +94,14 @@ function createEndsWithFilter(endsWith) {
 function modifyStrings(strings, modify) {
     // YOUR CODE BELOW HERE //
     
+    var result = []
     
+    for (var i in strings) {
+        var newResult = modify(strings[i]);
+        result.push(newResult);
+    }
     
+    return result;
     
     // YOUR CODE ABOVE HERE //
 }
@@ -90,11 +118,28 @@ function modifyStrings(strings, modify) {
 function allStringsPass(strings, test) {
     // YOUR CODE BELOW HERE //
     
-    
-    
+    for (var i in strings) {
+        if (test(strings[i]) === false) {
+            break; 
+        } else {
+            return true;
+        }
+    }
     
     // YOUR CODE ABOVE HERE //
 }
+
+var stringy = ["goat", "blue", "orca"]
+
+function lengthFour(string) {
+    if (string.length === 4) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+console.log(allStringsPass(stringy, lengthFour(stringy)));
 
 // DON'T REMOVE THIS CODE //////////////////////////////////////////////////////
 if((typeof process !== 'undefined') &&

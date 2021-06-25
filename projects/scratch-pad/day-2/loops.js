@@ -13,8 +13,9 @@
 function printArrayValues(array) {
   // YOUR CODE BELOW HERE //
   
-  
-  
+  for (var i = 0; i <= array.length - 1; i++) {
+    console.log(array[i]);
+  }
   
   // YOUR CODE ABOVE HERE //
 }
@@ -26,8 +27,9 @@ function printArrayValues(array) {
 function printArrayValuesInReverse(array) {
   // YOUR CODE BELOW HERE //
   
-  
-  
+  for (var i = array.length - 1; i >= 0; i--) {
+    console.log(array[i]);
+  }
   
   // YOUR CODE ABOVE HERE //
 }
@@ -38,8 +40,13 @@ function printArrayValuesInReverse(array) {
 function getObjectKeys(object) {
   // YOUR CODE BELOW HERE //
   
+  var result = [];
   
+  for (var key in object) {
+    result.push(key);
+  }
   
+  return result;
   
   // YOUR CODE ABOVE HERE //
 }
@@ -51,8 +58,9 @@ function getObjectKeys(object) {
 function printObjectKeys(object) {
   // YOUR CODE BELOW HERE //
   
-  
-  
+  for (var key in object) {
+    console.log(key);
+  }
   
   // YOUR CODE ABOVE HERE //
 }
@@ -63,7 +71,13 @@ function printObjectKeys(object) {
 function getObjectValues(object) {
   // YOUR CODE BELOW HERE //
   
+  var result = [];
   
+  for (var key in object) {
+    result.push(object[key]);
+  }
+  
+  return result;
   
   
   // YOUR CODE ABOVE HERE //
@@ -75,9 +89,10 @@ function getObjectValues(object) {
  */
 function printObjectValues(object) {
   // YOUR CODE BELOW HERE //
-  
-  
-  
+
+  for (var key in object) {
+    console.log(object[key]);
+  }  
   
   // YOUR CODE ABOVE HERE //
 }
@@ -88,8 +103,13 @@ function printObjectValues(object) {
 function getObjectLength(object) {
   // YOUR CODE BELOW HERE //
   
+  var totalKeys = 0
   
+  for (var key in object) {
+    totalKeys += 1;
+  }
   
+  return totalKeys;
   
   // YOUR CODE ABOVE HERE //
 }
@@ -101,9 +121,16 @@ function getObjectLength(object) {
 function printObjectValuesInReverse(object) {
   // YOUR CODE BELOW HERE //
   
+  var result = [];
   
+  for (var key in object) {
+    result.push(object[key]);
+  }
   
-  
+  for (var i = result.length - 1; i >= 0; i--) {
+    console.log(result[i]);
+  }
+
   // YOUR CODE ABOVE HERE //
 }
 
