@@ -47,17 +47,41 @@ function makeContactList() {
     /*
      * You need something here to hold contacts. See length api for a hint:
      */
-    var contacts;
+    var contacts = [];
     
     return {
         // we implemented the length api for you //
         length: function() {
             return contacts.length;
-        }, 
+        },
         addContact: function(contact) {
-            contacts.push(contact);
-        }
+            return contacts.push(contact);
+        },
+        findContact: function(fullName) {
+            for (var i = 0; i < contacts.length; i++) {
+                if (contacts[i].nameFirst.toLowerCase() + " " + contacts[i].nameLast.toLowerCase() == fullName.toLowerCase()) {
+                    return contacts[i];
+                }
+            }
+        },
+        removeContact: function(contact) {
+            var index = 0;
+            for (var i = 0; i < contacts.length; i++) {
+                if (contacts[i].nameFirst == contact.nameFirst && contacts[i].nameLast == contact.nameLast) {
+                    index = i;
+                }
+            }
+            contacts.splice(index, 1);
+        },
+        printAllContactNames: function() {
+            var string = "";
+            
+            for (var i = 0; i < contacts.length - 1; i++) {
+                string += contacts[i].nameFirst + " " + contacts[i].nameLast + "\n";
+            }
         
+            return string += contacts[contacts.length - 1].nameFirst + " " + contacts[contacts.length - 1].nameLast;
+        }
     }
 }
 

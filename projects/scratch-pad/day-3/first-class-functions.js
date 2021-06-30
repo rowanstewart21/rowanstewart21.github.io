@@ -115,31 +115,25 @@ function modifyStrings(strings, modify) {
  * 
  * TIP: You need to loop over the Strings, right? And pass them to the test?
  */
+
 function allStringsPass(strings, test) {
     // YOUR CODE BELOW HERE //
+    var countFalse = 0
     
-    for (var i in strings) {
+    for (var i = 0; i < strings.length; i++) {
         if (test(strings[i]) === false) {
-            break; 
-        } else {
-            return true;
-        }
+            countFalse += 1
+        } 
+    }
+    
+    if (countFalse > 0) {
+        return false;
+    } else {
+        return true;
     }
     
     // YOUR CODE ABOVE HERE //
 }
-
-var stringy = ["goat", "blue", "orca"]
-
-function lengthFour(string) {
-    if (string.length === 4) {
-        return true;
-    } else {
-        return false;
-    }
-}
-
-console.log(allStringsPass(stringy, lengthFour(stringy)));
 
 // DON'T REMOVE THIS CODE //////////////////////////////////////////////////////
 if((typeof process !== 'undefined') &&
