@@ -22,7 +22,7 @@ var myName;
 console.log(myName); // prints => undefined
 
 // 2. initialization or assignment //
-myName = 'john';
+myName = 'rowan';
 console.log(myName); // prints => john
 
 // 3. re-assignment //
