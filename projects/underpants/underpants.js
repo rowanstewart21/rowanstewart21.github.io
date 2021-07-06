@@ -21,7 +21,7 @@ var _ = {};
 *   _.identity({a: "b"}) === {a: "b"}
 */
 
-function _identity(value) {
+_.identity = function(value) {
     return value;
 }
 
@@ -45,6 +45,21 @@ function _identity(value) {
 * _.typeOf([1,2,3]) -> "array"
 */
 
+_.typeOf = function(value) {
+    var result = typeof(value);
+    
+    if (result === 'object') {
+        if (Array.isArray(value)) {
+            result = 'array';
+        } else if (value === null) {
+            result = 'null';
+        } else {
+            result = 'object';
+        }
+    }
+    
+    return result;
+}
 
 /** _.first
 * Arguments:
@@ -64,6 +79,24 @@ function _identity(value) {
 *   _.first(["a", "b", "c"], 2) -> ["a", "b"]
 */
 
+_.first = function(array, number) {
+    
+    if (!Array.isArray(array)) {
+        return [];
+    } else if (number === undefined) {
+        return array[0];
+    } else if (number <= 1) {
+        return [];
+    } else if (number > array.length) {
+        return array;
+    } else {
+        var result = [];
+        for (var i = 0; i < number; i++) {
+            result.push(array[i]);
+        }
+        return result;
+    }
+}
 
 /** _.last
 * Arguments:
@@ -83,6 +116,23 @@ function _identity(value) {
 *   _.last(["a", "b", "c"], 2) -> ["b", "c"]
 */
 
+_.last = function(array, number) {
+    if (!Array.isArray(array)) {
+        return [];
+    } else if (number === undefined) {
+        return array[array.length - 1];
+    } else if (number < 0) {
+        return [];
+    } else if (number > array.length) {
+        return array;
+    } else {
+        var result = [];
+        for (var i = number; i > 0; i--) {
+            result.push(array[array.length - i]);
+        }
+        return result;
+    }
+};
 
 /** _.indexOf
 * Arguments:
@@ -100,6 +150,20 @@ function _identity(value) {
 *   _.indexOf(["a","b","c"], "d") -> -1
 */
 
+_.indexOf = function(array, value) {
+    var index;
+    
+    for (var i = 0; i < array.length; i++) {
+        if (array[i].toLowerCase() === value.toLowerCase()) {
+            index = i;
+            break;
+        } else {
+            index = -1;
+        }
+    }
+    
+    return index;
+};
 
 /** _.contains
 * Arguments:
@@ -116,6 +180,11 @@ function _identity(value) {
 *   _.contains([1,"two", 3.14], "two") -> true
 */
 
+_.contains = function(array, value) {
+    var contains = (array.includes(value))? true : false;
+    
+    return contains;
+}
 
 /** _.each
 * Arguments:
@@ -132,6 +201,18 @@ function _identity(value) {
 *   _.each(["a","b","c"], function(e,i,a){ console.log(e)});
 *      -> should log "a" "b" "c" to the console
 */
+
+_.each = function(collection, func) {
+    if (Array.isArray(collection)) {
+        for (var i = 0; i < collection.length; i++) {
+            func(collection[i], i, collection);
+        }
+    } else {
+        for (var key in collection) {
+            func(collection[key], key, collection);
+        }
+    }
+}
 
 
 /** _.unique
