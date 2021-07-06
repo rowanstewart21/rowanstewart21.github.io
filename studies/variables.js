@@ -3,7 +3,7 @@ console.log(myFaveColor); // shows an error - let variables are not hoisted
 console.log(myFaveFruit); // shows an error - const variables are not hoisted
 
 /*
- * VARIABLES:
+ * VARIABLES :
  *
  * 0. to hold things in memory during the life-cycle of a program, we can use variables.  variables
  * are named identifiers that can point to values of a particular type, like a number, string,
