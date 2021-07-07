@@ -23,7 +23,7 @@ var _ = {};
 
 _.identity = function(value) {
     return value;
-}
+};
 
 /** _.typeOf
 * Arguments:
@@ -59,7 +59,7 @@ _.typeOf = function(value) {
     }
     
     return result;
-}
+};
 
 /** _.first
 * Arguments:
@@ -96,7 +96,7 @@ _.first = function(array, number) {
         }
         return result;
     }
-}
+};
 
 /** _.last
 * Arguments:
@@ -184,7 +184,7 @@ _.contains = function(array, value) {
     var contains = (array.includes(value))? true : false;
     
     return contains;
-}
+};
 
 /** _.each
 * Arguments:
@@ -212,7 +212,7 @@ _.each = function(collection, func) {
             func(collection[key], key, collection);
         }
     }
-}
+};
 
 
 /** _.unique
@@ -225,6 +225,18 @@ _.each = function(collection, func) {
 *   _.unique([1,2,2,4,5,6,5,2]) -> [1,2,4,5,6]
 */
 
+_.unique = function(array) {
+    var newArray = [];
+    
+    for (var i = 0; i < array.length; i++) {
+        if (newArray.includes(array[i])) {
+        } else {
+            newArray.push(array[i]);
+        }
+    }
+    
+    return newArray;
+};
 
 /** _.filter
 * Arguments:
@@ -242,6 +254,17 @@ _.each = function(collection, func) {
 *   use _.each in your implementation
 */
 
+_.filter = function(array, func) {
+    var newArray = [];
+    
+    for (var i = 0; i < array.length; i++) {
+        if (func(array[i], i, array)) {
+            newArray.push(array[i]);
+        }
+    }
+    
+    return newArray;
+};
 
 /** _.reject
 * Arguments:
@@ -256,6 +279,17 @@ _.each = function(collection, func) {
 *   _.reject([1,2,3,4,5], function(e){return e%2 === 0}) -> [1,3,5]
 */
 
+_.reject = function(array, func) {
+    var newArray = [];
+    
+    for (var i = 0; i < array.length; i++) {
+        if (!func(array[i], i, array)) {
+            newArray.push(array[i]);
+        }
+    }
+    
+    return newArray;
+};
 
 /** _.partition
 * Arguments:
@@ -276,6 +310,20 @@ _.each = function(collection, func) {
 }
 */
 
+_.partition = function(array, func) {
+    var truthy = [];
+    var falsy = [];
+    
+    for (var i = 0; i < array.length; i++) {
+        if (func(array[i], i, array)) {
+            truthy.push(array[i]);
+        } else {
+            falsy.push(array[i]);
+        }
+    }
+    
+    return [truthy, falsy];
+};
 
 /** _.map
 * Arguments:
@@ -293,6 +341,21 @@ _.each = function(collection, func) {
 *   _.map([1,2,3,4], function(e){return e * 2}) -> [2,4,6,8]
 */
 
+_.map = function(collection, func) {
+    var newArray = [];
+    
+    if (Array.isArray(collection)) {
+        for (var i = 0; i < collection.length; i++) {
+            newArray.push(func(collection[i], i, collection));
+        }
+    } else {
+        for (var key in collection) {
+            newArray.push(func(collection[key], key, collection));
+        }
+    }
+    
+    return newArray;
+};
 
 /** _.pluck
 * Arguments:
@@ -305,6 +368,9 @@ _.each = function(collection, func) {
 *   _.pluck([{a: "one"}, {a: "two"}], "a") -> ["one", "two"]
 */
 
+_.pluck = function(array, property) {
+    return _.map(array, function(object) {return object[property];});
+};
 
 /** _.every
 * Arguments:
@@ -327,6 +393,17 @@ _.each = function(collection, func) {
 *   _.every([1,2,3], function(e){return e % 2 === 0}) -> false
 */
 
+_.every = function(collection, func) {
+    var newArray = [];
+    
+    _.each(collection, function(e) {newArray.push(func(e))});
+    
+    if (newArray.includes(false)) {
+        return false;
+    } else {
+        return true;
+    }
+};
 
 /** _.some
 * Arguments:

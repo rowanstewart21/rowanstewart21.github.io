@@ -25,7 +25,6 @@
 // 1. datatypes //
 
 var myNumber = 21;
-
 /* numbers are any numerical data, either integer or floating decimal. we can use 
  * arithmetic operators to manipulate numerical data the same way we would in math 
  * (for example, myNumber + 21 would return 42). we can also use comparison and logical
@@ -87,5 +86,21 @@ var myObject = {name: 'rowan', age: 24, collegeGrad: true, job: 'math teacher'};
 var myFunction = function(x){
       return x + 21
    }
-/* 
+/* functions are repeatable blocks of code that can be called with or without inputs, 
+ * or parameters. functions can be defined as variables (like myFunction above) or 
+ * with the keyword function (just like variables are defined with the keyword var).
+ * 
+ * to define a function, we start with the keyword function followed by the name of
+ * the function. normally, the name should be something descriptive of what the function
+ * is doing when called. then, we add any parameters of the function in parenthesis (in 
+ * myFunction, the parameter would be a number, x). the block of code we want to execute
+ * with the function is contained within {curly brackets} - in myFunction, we're adding
+ * 21 to x, and returning that new value. 
+ * 
+ * to call a function, we just write the name of the function and add any parameters or
+ * arguments into the parentheses. we can call myFunction by writing myFunction(5) to 
+ * get the sum of 5 and 21. 
+ *
+ * functions (like variables) are hoisted to the top of a program, so the function can
+ * be called anywhere in the code, regardless of where the function definition appears.
  */
