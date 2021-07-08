@@ -394,15 +394,7 @@ _.pluck = function(array, property) {
 */
 
 _.every = function(collection, func) {
-    var newArray = [];
     
-    _.each(collection, function(e) {newArray.push(func(e))});
-    
-    if (newArray.includes(false)) {
-        return false;
-    } else {
-        return true;
-    }
 };
 
 /** _.some
@@ -449,6 +441,45 @@ _.some = function(collection, func) {
 *   _.reduce([1,2,3], function(previousSum, currentValue, currentIndex){ return previousSum + currentValue }, 0) -> 6
 */
 
+// with a for loop 
+
+// _.reduce = function(array, func, seed) {
+//     if (seed === undefined) {
+//         seed = array[0];
+        
+//         for (var i = 1; i < array.length; i++) {
+//             seed = func(seed, array[i], i);
+//         }
+//         return seed;
+//     } else {
+//         for (var i = 0; i < array.length; i++) {
+//             seed = func(seed, array[i], i);
+//         }
+//         return seed;
+//     }
+// }
+
+// using the _.each function
+
+_.reduce = function(array, func, seed) {
+    if (seed === undefined) {
+        seed = array[0];
+        
+        _.each(array, function(value, i) {
+            if (i !== 0) {
+                seed = func(seed, value, i);
+            }
+        })
+        
+        return seed
+    } else {
+        _.each(array, function(value, i) {
+             seed = func(seed, value, i);
+        })
+        
+        return seed
+    }
+}
 
 /** _.extend
 * Arguments:
