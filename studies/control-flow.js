@@ -12,8 +12,8 @@
  * 2. we can add any number of following conditional else if statements to check afther 
  * the inital if statement
  * 
- * 3. the final else statement tells the program what to do if all of the given conditions 
- * are false 
+ * 3. the final else statement tells the program what to do if all of the given 
+ * conditions are false 
  *
  * 4. switch blocks are similar to if / else if / else statements in that they also have
  * the program make decisions based on the results of conditional statements
