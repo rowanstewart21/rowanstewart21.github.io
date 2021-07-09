@@ -199,7 +199,7 @@ function checkID(name) {
 
 checkID('abby'); // returns 'hmm... who are you?'
 
-console.log(greeting); // shows an error, variable greeting doesn't exist 
+// console.log(greeting); shows an error, variable greeting doesn't exist 
 
 /* scope of variables is really important for what can and cannot be used inside and 
  * outside of functions. in the example above, the variable myName is defined in the 
