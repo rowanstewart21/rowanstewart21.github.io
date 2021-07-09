@@ -394,7 +394,41 @@ _.pluck = function(array, property) {
 */
 
 _.every = function(collection, func) {
+    var allTruthy = true;
     
+    if (Array.isArray(collection)) {
+        if (func === undefined) {
+            for (var i = 0; i < collection.length; i++) {
+                if (!collection[i]) {
+                    allTruthy = false;
+                    break;
+                }
+            }
+        } else {
+            for (var i = 0; i < collection.length; i++) {
+                if (!(func(collection[i], i, collection))) {
+                    allTruthy = false;
+                }
+            }
+        }
+    } else {
+        if (func === undefined) {
+            for (var key in collection) {
+                if (!collection[key]) {
+                    allTruthy = false;
+                    break;
+                }
+            }
+        } else {
+            for (var key in collection) {
+                if (!(func(collection[key], key, collection))) {
+                    allTruthy = false;
+                }
+            }
+        }
+    }
+    
+    return allTruthy;
 };
 
 /** _.some
@@ -419,8 +453,42 @@ _.every = function(collection, func) {
 */
 
 _.some = function(collection, func) {
+    var someTruthy = false;
     
-}
+    if (Array.isArray(collection)) {
+        if (func === undefined) {
+            for (var i = 0; i < collection.length; i++) {
+                if (collection[i]) {
+                    someTruthy = true;
+                    break;
+                }
+            }
+        } else {
+            for (var i = 0; i < collection.length; i++) {
+                if (func(collection[i], i, collection)) {
+                    someTruthy = true;
+                }
+            }
+        }
+    } else {
+        if (func === undefined) {
+            for (var key in collection) {
+                if (collection[key]) {
+                    someTruthy = true;
+                    break;
+                }
+            }
+        } else {
+            for (var key in collection) {
+                if (func(collection[key], key, collection)) {
+                    someTruthy = true;
+                }
+            }
+        }
+    }
+    
+    return someTruthy;
+};
 
 /** _.reduce
 * Arguments:
@@ -495,6 +563,18 @@ _.reduce = function(array, func, seed) {
 *   _.extend(data, {b:"two"}); -> data now equals {a:"one",b:"two"}
 *   _.extend(data, {a:"two"}); -> data now equals {a:"two"}
 */
+
+_.extend = function(...objects) {
+    var args = arguments;
+    
+    for (var i = 0; i < args.length; i++) {
+        for (var key in args[i]) {
+            args[0][key] = args[i][key];
+        }
+    }
+    
+    return args[0];
+}
 
 //////////////////////////////////////////////////////////////////////
 // DON'T REMOVE THIS CODE ////////////////////////////////////////////
