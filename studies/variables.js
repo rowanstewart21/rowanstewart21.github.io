@@ -102,7 +102,7 @@ var myFaveFood = 'pasta';
  */
  
 let myFaveColor = 'purple';
-const myFaveFruit = 'strawberry'
+const myFaveFruit = 'strawberry';
 
 /* let and const are not hoisted - these variables myFaveColor and myFaveFruit do not 
  * exist until lines 100 and 101 where they are declared. calling them earlier in the

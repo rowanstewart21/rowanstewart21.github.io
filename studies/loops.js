@@ -81,7 +81,7 @@ for (var i = 1; i <= 15; i++) {
     }
 } 
 
-console.log(fooBarArray) 
+console.log(fooBarArray);
 // prints > [1,2,'foo',4,'bar','foo',7,8,'foo','bar',11,'foo',13,14,'foobar']
 
 /* we can create more complex for loops containing if / else if / else statements, 
@@ -113,7 +113,7 @@ for (var i = alphabet.length - 1; i >= 0; i--) {
     backwardAlphabet.push(alphabet[i]);
 } 
 
-console.log(backwardAlphabet) // prints > ['g', 'f', 'e', 'd', 'c', 'b', 'a']
+console.log(backwardAlphabet); // prints > ['g', 'f', 'e', 'd', 'c', 'b', 'a']
 
 /* we can also use for loops to iterate backward over arrays, starting from the length
  * of the array minus one (the last index) until we hit 0 (the first index). this 
@@ -138,11 +138,11 @@ for (var key in person) {
  */
  
 // a bad example
-var person = {name: 'rowan', age: 24, collegeGrad: true, job: 'math teacher'};
-var characteristics = [];
+var personTwo = {name: 'rowan', age: 24, collegeGrad: true, job: 'math teacher'};
+var characteristicsTwo = [];
 
-for (var key in person) {
-    characteristics.push(person.key);
+for (var key in personTwo) {
+    characteristicsTwo.push(person.key);
 } // prints nothing, since there is no key in person actually called 'key'!
 
 /* NOTE: it's important to use [bracket notation] when referencing the keys of the 
@@ -188,7 +188,7 @@ while (date > 0) {
 var number = 0;
 
 while (number < 10) {
-    console.log(number)
+    console.log(number);
 } // prints infinite 0's to the console until the program is killed 
 
 /* NOTE: it's easy to forget the increment statement in a while loop - it's super 

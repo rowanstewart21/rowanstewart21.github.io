@@ -49,7 +49,7 @@ console.log(myNumber); // prints > 42
 // function nameOfFunction(parameters needed) {
 function addTwentyOne(x) {
     // code to be executed
-    return x + 21
+    return x + 21;
 }
 
 console.log(addTwentyOne(4)); // prints > 25
@@ -186,7 +186,7 @@ myGreeting('good morning', 'rowan'); // returns 'good morning rowan!'
 var myName = 'rowan';
 
 function checkID(name) {
-  let greeting = ''
+  let greeting = '';
   
   if (name === myName) {
     greeting = 'hello rowan!';
