@@ -45,7 +45,7 @@ console.log(2 * 4); // prints > 8
 console.log(9 / 3); // prints > 3
 
 var myNumber = 21;
-var myOtherNumber = 3
+var myOtherNumber = 3;
 
 console.log(myNumber + myOtherNumber); // prints > 24
 console.log(myNumber - myOtherNumber); // prints > 18
@@ -101,6 +101,8 @@ var truthy = (0 == 0); // resolves to true
 var alsoTruthy = ('rowan' == 'Rowan'); // also resolves to true
 var alsoAlsoTruthy = ('2' == 2); // also also resolves to true
 
+console.log(truthy, alsoTruthy, alsoAlsoTruthy);
+
 /* since the single '=' sign is used as the assignment operator, two (or three) '=' are
  * used to compare two values. with two '=', values are not strictly compared, meaning
  * that datatype or capital letters do not affect the comparison (for example, 'rowan'
@@ -110,6 +112,8 @@ var alsoAlsoTruthy = ('2' == 2); // also also resolves to true
 var truthyTwo = (0 === 0); // resolves to true
 var falsyTwo = ('hello' === 'Hello'); // resolves to false
 var falsyThree = ('2' === 2); // also resolves to false 
+
+console.log(truthyTwo, falsyTwo, falsyThree);
 
 /* three '=' signs are used to indicate strict comparison, where datatype and
  * construction must match - in the example above, 0 is strictly equal to 0 because their

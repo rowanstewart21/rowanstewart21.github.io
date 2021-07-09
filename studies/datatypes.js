@@ -21,6 +21,8 @@
 // 1. datatypes //
 
 var myNumber = 21;
+
+console.log(myNumber);
 /* numbers are any numerical data, either integer or floating decimal. we can use 
  * arithmetic operators to manipulate numerical data the same way we would in math 
  * (for example, myNumber + 21 would return 42). we can also use comparison and logical
@@ -28,6 +30,8 @@ var myNumber = 21;
  */
 
 var myString = 'hello, world!';
+
+console.log(myString);
 /* strings are character data and contain letters and words. strings are contained in 
  * quotations marks. quotation marks around any other datatype will convert the data to
  * a string (for example, 42 is a number, but '42' is a string). we can use arithmetic, 
@@ -35,22 +39,30 @@ var myString = 'hello, world!';
  */
 
 var myBoolean = true;
+
+console.log(myBoolean);
 /* boolean values are either true or false - boolean values are most frequently used 
  * when working with if statements, where the program completes one action if a statement
  * is true and a different action if the statement is false
  */
 
 var myUndefined;
+
+console.log(myUndefined);
 /* undefined means that the variable has not been initialized or assigned yet - the 
  * variable name may exist, but it has not been assigned a value
  */
  
 var myNull = null;
+
+console.log(myNull);
 /* null values mean that the value doesn't exist or has been nullified by the programmer.
  * this means that the metaphorical "bucket" of our variable is empty
  */
  
 var myNaN = 12/0;
+
+console.log(myNaN);
 /* NaN is a datatype that stands for not a number and is typically the result of invalid
  * mathematical operations (like dividing by 0, in myNaN, or operations with infinity).
  *
@@ -61,12 +73,16 @@ var myNaN = 12/0;
  
 var myInfinity = Infinity;
 var myNegativeInfinity = -Infinity;
+
+console.log(myInfinity, myNegativeInfinity);
 /* the datatype infinity can be used to represent positive and negative infinity - the 
  * computer uses infinity to represent any number greater (or less than in the negative
  * case) 1.797693134862315 E+308, which is the limit of floating point decimal numbers
  */
 
 var myArray = ['rowan', 24, true];
+
+console.log(myArray);
 /* arrays are like lists of other values - they can contain any of the simple datatypes
  * within their list. arrays are created using [square brackets] and commas between 
  * values. we can use several built-in methods with arrays, such as push, unshift, pop,
@@ -81,6 +97,8 @@ var myArray = ['rowan', 24, true];
  */
 
 var myObject = {name: 'rowan', age: 24, collegeGrad: true, job: 'math teacher'};
+
+console.log(myObject);
 /* objects are similar to arrays in that they hold a collection of values, but objects
  * are sets of key-value pairs, meaning that they have an attribute or key that is 
  * assigned a value. for example, in myObject, the attribute or key name is assigned 
@@ -96,8 +114,10 @@ var myObject = {name: 'rowan', age: 24, collegeGrad: true, job: 'math teacher'};
  */
  
 var myFunction = function(x){
-      return x + 21
-   }
+  return x + 21;
+};
+   
+console.log(myFunction(0));
 /* functions are repeatable blocks of code that can be called with or without inputs, 
  * or parameters. functions can be defined as variables (like myFunction above) or 
  * with the keyword function (just like variables are defined with the keyword var)

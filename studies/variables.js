@@ -62,6 +62,8 @@ myFavoriteNum = 22; // this is not allowed - let and var can be reassigned
 const myBirthday = '04/21/97';
 myBirthday = '04/22/97'; // this is not allowed - const cannot be reassigned
 
+console.log(myFavoriteNum, myBirthday);
+
 /* let and const also declare variables, but have slightly different properties than the
  * keyword var. let and const are both block-scoped variables, which means that they only
  * exist within the scope where they're created. 
@@ -73,9 +75,13 @@ myBirthday = '04/22/97'; // this is not allowed - const cannot be reassigned
  
 if (myName === 'rowan') {
     let myLastName = 'stewart';
+    console.log(myLastName);
 } else {
     const myLastName = 'not stewart';
+    console.log(myLastName);
 }
+
+
 
 /* console.log(myLastName); shows an error because myLastName is not defined outside of 
  * the if statement in which it was created; we could use it within the if statement, but
